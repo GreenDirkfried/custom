@@ -1,0 +1,6 @@
+minetest.register_on_dieplayer(function(player)
+	local player_name = player:get_player_name()
+	local pos = vector.round(player:get_pos())
+	local pos_string = minetest.pos_to_string(pos)
+	minetest.chat_send_player(player_name, core.colorize("#F6A10A", "Du bist bei den Koordinaten "..minetest.pos_to_string(pos).. " gestorben. Schnell, hole dir deine Knochen wieder bevor es jemand Anderes tut! ;-)"))
+end)
