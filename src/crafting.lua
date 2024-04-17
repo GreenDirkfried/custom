@@ -1,21 +1,21 @@
 local S = minetest.get_translator("custom")
 
-minetest.register_craft({
-	output = 'default:mese_crystal',
-	recipe = {
-		{"default:mese_crystal_fragment", "default:mese_crystal_fragment", "default:mese_crystal_fragment"},
-		{"default:mese_crystal_fragment", "default:mese_crystal_fragment", "default:mese_crystal_fragment"},
-		{"default:mese_crystal_fragment", "default:mese_crystal_fragment", "default:mese_crystal_fragment"},
-	},
-})
+--minetest.register_craft({
+--	output = 'default:mese_crystal',
+--	recipe = {
+--		{"default:mese_crystal_fragment", "default:mese_crystal_fragment", "default:mese_crystal_fragment"},
+--		{"default:mese_crystal_fragment", "default:mese_crystal_fragment", "default:mese_crystal_fragment"},
+--		{"default:mese_crystal_fragment", "default:mese_crystal_fragment", "default:mese_crystal_fragment"},
+--	},
+--})
 
 if minetest.get_modpath("mesecons") then
   minetest.register_craft({
           output = 'mesecons_stickyblocks:sticky_block_all',
           recipe = {
-                  {"mesecons_materials:glue", "mesecons_materials:glue", ""},
-                  {"mesecons_materials:glue", "mesecons_materials:glue", ""},
-                  {"", "", ""},
+                  {"mesecons_materials:glue", "mesecons_materials:glue", "mesecons_materials:glue"},
+                  {"mesecons_materials:glue", "group:wood", "mesecons_materials:glue"},
+                  {"mesecons_materials:glue", "mesecons_materials:glue", "mesecons_materials:glue"},
           },
   })
 end
