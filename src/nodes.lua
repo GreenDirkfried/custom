@@ -2,8 +2,9 @@
 -- taken with texture from the mod "Loud Walking Mapgen" from duane
 minetest.register_node("custom:air_ladder", {
 	description = "Air Ladder",
-	drawtype = "glasslike",
-	tiles = {"loud_walking_air_ladder.png"},
+	inventory_image = "loud_walking_air_ladder.png",
+	drawtype = "airlike",
+	--tiles = {"loud_walking_air_ladder.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
