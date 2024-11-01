@@ -1,7 +1,7 @@
 if minetest.get_modpath("3d_armor") then
 
 --enhance mithril armor
-  if minetest.get_modpath("moreores") then
+  if minetest.get_modpath("armor_mithril") then
     minetest.override_item("3d_armor:helmet_mithril", {
         groups = {armor_head=1, armor_heal=14, armor_use=66},
         armor_groups = {fleshy=17},

@@ -1,22 +1,60 @@
---additional recipes and recipe changes
-minetest.register_craft({
-	output = 'default:mese_crystal',
-	recipe = {
-		{"default:mese_crystal_fragment", "default:mese_crystal_fragment", "default:mese_crystal_fragment"},
-		{"default:mese_crystal_fragment", "default:mese_crystal_fragment", "default:mese_crystal_fragment"},
-		{"default:mese_crystal_fragment", "default:mese_crystal_fragment", "default:mese_crystal_fragment"},
-	},
-})
+local S = minetest.get_translator("custom")
+
+--minetest.register_craft({
+--	output = 'default:mese_crystal',
+--	recipe = {
+--		{"default:mese_crystal_fragment", "default:mese_crystal_fragment", "default:mese_crystal_fragment"},
+--		{"default:mese_crystal_fragment", "default:mese_crystal_fragment", "default:mese_crystal_fragment"},
+--		{"default:mese_crystal_fragment", "default:mese_crystal_fragment", "default:mese_crystal_fragment"},
+--	},
+--})
 
 if minetest.get_modpath("mesecons") then
   minetest.register_craft({
           output = 'mesecons_stickyblocks:sticky_block_all',
           recipe = {
-                  {"mesecons_materials:glue", "mesecons_materials:glue", ""},
-                  {"mesecons_materials:glue", "mesecons_materials:glue", ""},
-                  {"", "", ""},
+                  {"mesecons_materials:glue", "mesecons_materials:glue", "mesecons_materials:glue"},
+                  {"mesecons_materials:glue", "group:wood", "mesecons_materials:glue"},
+                  {"mesecons_materials:glue", "mesecons_materials:glue", "mesecons_materials:glue"},
           },
   })
+end
+
+--armor material
+if minetest.get_modpath("3d_armor") then
+
+	minetest.register_craftitem("custom:crystal_ingot", {
+		description = S("Crystal Ingot"),
+		inventory_image = "ethereal_crystal_ingot.png"
+	})
+	minetest.register_craft({
+		type = "shapeless",
+		output = "custom:crystal_ingot",
+		recipe = {
+			"default:mese_crystal",
+			"default:diamond",
+		},
+	})
+	minetest.register_alias("ethereal:crystal_ingot","custom:crystal_ingot")
+
+	if minetest.get_modpath("obsidianstuff") then
+		if minetest.get_modpath("mobs_monster") then
+			minetest.register_craftitem("custom:nether_ingot", {
+				description = S("Nether Ingot"),
+				inventory_image = "nether_nether_ingot.png"
+			})
+			minetest.register_craft({
+				type = "shapeless",
+				output = "custom:nether_ingot",
+				recipe = {
+					"obsidianstuff:ingot",
+					"mobs:lava_orb",
+				},
+			})
+			minetest.register_alias("nether:nether_ingot","custom:nether_ingot")
+		end
+	end
+
 end
 
 -- if minetest.get_modpath("nyancat") then
