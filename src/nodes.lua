@@ -4,7 +4,7 @@ local S = minetest.get_translator("custom")
 
 -- taken with texture from the mod "Loud Walking Mapgen" from duane
 minetest.register_node("custom:air_ladder", {
-	description = "Air Ladder",
+	description = S("Air Ladder"),
 	inventory_image = "loud_walking_air_ladder.png",
 	drawtype = "airlike",
 	--tiles = {"loud_walking_air_ladder.png"},
