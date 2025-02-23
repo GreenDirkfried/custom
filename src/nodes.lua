@@ -1,4 +1,7 @@
 --additional nodes
+
+local S = minetest.get_translator("custom")
+
 -- taken with texture from the mod "Loud Walking Mapgen" from duane
 minetest.register_node("custom:air_ladder", {
 	description = "Air Ladder",
@@ -15,4 +18,12 @@ minetest.register_node("custom:air_ladder", {
 		type = "fixed",
 		fixed = {0, 0, 0, 0, 0, 0},
 	},
+})
+
+minetest.register_node("custom:stone_with_nether", {
+	description = S("Nether Ore"),
+	tiles = {"default_stone.png^custom_mineral_nether.png"},
+	groups = {cracky = 2, level = 2},
+	drop = "custom:nether_lump",
+	sounds = default.node_sound_stone_defaults(),
 })

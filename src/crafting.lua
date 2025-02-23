@@ -37,25 +37,44 @@ if minetest.get_modpath("3d_armor") then
 	})
 	minetest.register_alias("ethereal:crystal_ingot","custom:crystal_ingot")
 
-	if minetest.get_modpath("obsidianstuff") then
-		if minetest.get_modpath("mobs_monster") then
-			minetest.register_craftitem("custom:nether_ingot", {
-				description = S("Nether Ingot"),
-				inventory_image = "nether_nether_ingot.png"
-			})
-			minetest.register_craft({
-				type = "shapeless",
-				output = "custom:nether_ingot",
-				recipe = {
-					"obsidianstuff:ingot",
-					"mobs:lava_orb",
-				},
-			})
-			minetest.register_alias("nether:nether_ingot","custom:nether_ingot")
-		end
-	end
+--	if minetest.get_modpath("obsidianstuff") then
+--		if minetest.get_modpath("mobs_monster") then
+--			minetest.register_craftitem("custom:nether_ingot", {
+--				description = S("Nether Ingot"),
+--				inventory_image = "nether_nether_ingot.png"
+--			})
+--			minetest.register_craft({
+--				type = "shapeless",
+--				output = "custom:nether_ingot",
+--				recipe = {
+--					"obsidianstuff:ingot",
+--					"mobs:lava_orb",
+--				},
+--			})
+--			minetest.register_alias("nether:nether_ingot","custom:nether_ingot")
+--		end
+--	end
 
 end
+
+minetest.register_craftitem("custom:nether_ingot", {
+  description = S("Nether Ingot"),
+  inventory_image = "nether_nether_ingot.png"
+})
+minetest.register_alias("nether:nether_ingot","custom:nether_ingot")
+
+minetest.register_craftitem("custom:nether_lump", {
+  description = S("Nether Lump"),
+  inventory_image = "nether_nether_lump.png",
+})
+minetest.register_alias("nether:nether_lump","custom:nether_lump")
+
+minetest.register_craft({
+  type = "cooking",
+  output = "custom:nether_ingot",
+  recipe = "custom:nether_lump",
+  cooktime = 33,
+})
 
 -- if minetest.get_modpath("nyancat") then
 --   minetest.register_craft({
