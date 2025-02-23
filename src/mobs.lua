@@ -77,3 +77,42 @@ if minetest.get_modpath("moreores") then
 end
 
 end
+
+local sword_drops = {
+	{name = "default:sword_steel", chance = 5, min = 1, max = 1},
+	{name = "custom:stone_with_nether", chance = 15, min = 1, max = 2}
+}
+local archer_drops = {
+	{name = "default:stick", chance = 5, min = 1, max = 1},
+	{name = "custom:stone_with_nether", chance = 20, min = 1, max = 1}
+}
+local archer_dark_drops = {
+	{name = "default:stick", chance = 5, min = 1, max = 1},
+	{name = "custom:stone_with_nether", chance = 15, min = 1, max = 1}
+}
+
+if minetest.get_modpath("bonemeal") then
+	table.insert(sword_drops, {name = "bonemeal:bone", chance = 3, min = 1, max = 2})
+	table.insert(archer_drops, {name = "bonemeal:bone", chance = 3, min = 1, max = 2})
+	table.insert(archer_dark_drops, {name = "bonemeal:bone", chance = 3, min = 1, max = 2})
+end
+
+if minetest.get_modpath("wool") then
+	table.insert(archer_dark_drops, {name = "wool:dark_grey", chance = 3, min = 1, max = 2})
+end
+
+if minetest.get_modpath("farming") then
+	table.insert(archer_drops, {name = "farming:string", chance = 3, min = 1, max = 2})
+	table.insert(archer_dark_drops, {name = "farming:string", chance = 3, min = 1, max = 2})
+end
+
+if minetest.get_modpath("mobs_skeletons") then
+	local def = minetest.registered_entities["mobs_skeletons:skeleton"]
+	def.drops = sword_drops
+
+	local def = minetest.registered_entities["mobs_skeletons:skeleton_archer"]
+	def.drops = archer_drops
+
+	local def = minetest.registered_entities["mobs_skeletons:skeleton_archer_dark"]
+	def.drops = archer_dark_drops
+end
