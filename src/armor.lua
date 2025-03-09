@@ -66,4 +66,11 @@ if minetest.get_modpath("3d_armor") then
     })
   end
 
+  --enhance crystal armor
+    if minetest.get_modpath("armor_crystal") then
+      minetest.override_item("3d_armor:helmet_crystal", {
+          groups = {armor_head=1, armor_heal=12, armor_use=100, armor_fire=1,armor_water=1},
+      })
+    end
+
 end

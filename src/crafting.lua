@@ -28,11 +28,11 @@ if minetest.get_modpath("3d_armor") then
 		inventory_image = "ethereal_crystal_ingot.png"
 	})
 	minetest.register_craft({
-		type = "shapeless",
 		output = "custom:crystal_ingot",
 		recipe = {
-			"default:mese_crystal",
-			"default:diamond",
+			{"default:mese_crystal","default:mese_crystal","default:mese_crystal"},
+      {"default:mese_crystal","default:diamond","default:mese_crystal"},
+      {"default:mese_crystal","default:mese_crystal","default:mese_crystal"},
 		},
 	})
 	minetest.register_alias("ethereal:crystal_ingot","custom:crystal_ingot")
