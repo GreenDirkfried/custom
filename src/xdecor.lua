@@ -8,4 +8,7 @@ if minetest.get_modpath("xdecor") then
   if minetest.get_modpath("bale") then
     xdecor.register_cut("bale:bale")
   end
+  if minetest.get_modpath("xocean") then
+    xdecor.register_cut("xocean:ocean_circular")
+  end
 end
