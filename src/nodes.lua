@@ -30,6 +30,39 @@ minetest.register_node("custom:stone_with_nether", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
+--crystal spike from https://codeberg.org/tenplus1/ethereal
+minetest.register_node("custom:crystal_spike", {
+	description = S("Crystal Spike"),
+	drawtype = "plantlike",
+	tiles = {"ethereal_crystal_spike.png"},
+	inventory_image = "ethereal_crystal_spike.png",
+	wield_image = "ethereal_crystal_spike.png",
+	paramtype = "light",
+	light_source = 7,
+	sunlight_propagates = true,
+	walkable = true,
+	damage_per_second = 1,
+	groups = {cracky = 1, falling_node = 1, puts_out_fire = 1, cools_lava = 1},
+	sounds = default.node_sound_glass_defaults(),
+	selection_box = {
+		type = "fixed", fixed = {-5 / 16, -0.5, -5 / 16, 5 / 16, 0, 5 / 16}
+	},
+	node_box = {
+		type = "fixed", fixed = {-5 / 16, -0.5, -5 / 16, 5 / 16, 0, 5 / 16}
+	}
+})
+
+minetest.register_alias("ethereal:crystal_spike","custom:crystal_spike")
+
+minetest.register_node("custom:stone_with_crystal", {
+	description = S("Crystal Ore"),
+	tiles = {"default_stone.png^custom_mineral_crystal.png"},
+	groups = {cracky = 1},
+	drop = "custom:crystal_spike",
+	sounds = default.node_sound_stone_defaults(),
+	--light_source = 3,
+})
+
 --chat message for no drop of unbreakable nodes
 custom.unbreakable_drop_msg = function(itemstack, player)
 	local name = player:get_player_name()

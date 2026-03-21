@@ -20,22 +20,23 @@ if minetest.get_modpath("mesecons") then
   })
 end
 
---armor material
-if minetest.get_modpath("3d_armor") then
-
+-- crystal ingot from --crystal spike from https://codeberg.org/tenplus1/ethereal
 	minetest.register_craftitem("custom:crystal_ingot", {
 		description = S("Crystal Ingot"),
 		inventory_image = "ethereal_crystal_ingot.png"
 	})
-	minetest.register_craft({
-		output = "custom:crystal_ingot",
-		recipe = {
-			{"default:mese_crystal","default:mese_crystal","default:mese_crystal"},
-      {"default:mese_crystal","default:diamond","default:mese_crystal"},
-      {"default:mese_crystal","default:mese_crystal","default:mese_crystal"},
-		},
-	})
-	minetest.register_alias("ethereal:crystal_ingot","custom:crystal_ingot")
+
+  minetest.register_alias("ethereal:crystal_ingot","custom:crystal_ingot")
+
+  minetest.register_craft({
+	output = "custom:crystal_ingot",
+	recipe = {
+		{"default:mese_crystal", "custom:crystal_spike"},
+		{"custom:crystal_spike", "default:mese_crystal"},
+		{"bucket:bucket_water", ""}
+	},
+	replacements = {{"bucket:bucket_water", "bucket:bucket_empty"}}
+})
 
 --	if minetest.get_modpath("obsidianstuff") then
 --		if minetest.get_modpath("mobs_monster") then
@@ -54,8 +55,6 @@ if minetest.get_modpath("3d_armor") then
 --			minetest.register_alias("nether:nether_ingot","custom:nether_ingot")
 --		end
 --	end
-
-end
 
 minetest.register_craftitem("custom:nether_ingot", {
   description = S("Nether Ingot"),
