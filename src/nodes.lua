@@ -111,3 +111,23 @@ custom.register_unbreakable_node("custom:unbreakable_ice", {
 	groups = {cools_lava = 1, slippery = 3},
 	sounds = default.node_sound_ice_defaults(),
 })
+
+custom.register_unbreakable_node("custom:unbreakable_glass", {
+	description = S("Unbreakable Glass"),
+	drawtype = "glasslike_framed_optional",
+	tiles = {"default_glass.png", "default_glass_detail.png"},
+	use_texture_alpha = "clip", -- only needed for stairs API
+	paramtype = "light",
+	sunlight_propagates = true,
+	sounds = default.node_sound_glass_defaults(),
+})
+
+custom.register_unbreakable_node("custom:unbreakable_obsidian_glass", {
+	description = S("Obsidian Glass"),
+	drawtype = "glasslike_framed_optional",
+	tiles = {"default_obsidian_glass.png", "default_obsidian_glass_detail.png"},
+	use_texture_alpha = "clip", -- only needed for stairs API
+	paramtype = "light",
+	sunlight_propagates = true,
+	sounds = default.node_sound_glass_defaults(),
+})
