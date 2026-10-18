@@ -51,7 +51,7 @@ if minetest.get_modpath("mobs_monster") then
 		{name = "default:mese_crystal", chance = 3, min = 0, max = 2},
 		{name = "default:diamond", chance = 4, min = 0, max = 1},
 		{name = "default:diamondblock", chance = 30, min = 0, max = 1},
-		{name = "default:stone_with_diamond", chance = 1, min = 1, max = 1},
+		{name = "default:stone_with_diamond", chance = 10, min = 1, max = 1},
 	}
 
 -- Land Guard with different types from https://codeberg.org/tenplus1/mobs_monster
